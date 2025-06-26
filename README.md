@@ -14,7 +14,7 @@ Como proyecto final del 4.º semestre demostramos todo lo aprendido en programac
 - **IA reactiva**: los aliens se adaptan a tu posición y velocidad.
 - **Co‑op local**: comparte teclado y ¡que empiece la batalla en pareja!
 - 
-## Skils
+## Skills
 
 <p style="text-align: left;">
     <img src="https://skillicons.dev/icons?i=github,py,pycharm" alt="Skill Icons">
