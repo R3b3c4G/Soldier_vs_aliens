@@ -34,12 +34,13 @@ class Configurations:
     _min_aliens = 10                                # Mínimo de enemigos que aparecen en la pantalla.
 
     # Rutas de las imágenes utilizadas.
-    _background_image_path = "../../../../../PycharmProjects/Soldier_vs_aliens/Media/background_image.jpg"
-    _soldier_sheet_path = "../../../../../PycharmProjects/Soldier_vs_aliens/Media/soldier-idle_shooting_sheet.png"
-    _shot_sheet_path = "../../../../../PycharmProjects/Soldier_vs_aliens/Media/shot-sheet.png"
-    _alien_sheets_path = ["../media/alien1-Sheet.png", "../media/alien2-Sheet.png",
-                          "../media/alien3-Sheet.png", "../media/alien4-Sheet.png",
-                          "../media/alien5-Sheet.png"]
+    _background_image_path = "../Media/background_image.jpg"
+    _soldier_sheet_path = "../Media/soldier-idle_shooting_sheet.png"
+    _shot_sheet_path = "../Media/shot-sheet.png"
+    _alien_sheets_path = ["../Media/alien2-Sheet.png",
+                          "../Media/alien4-Sheet.png",
+                          "../Media/alien5-Sheet.png"]
+    _game_over_image_path = "../Media/game_over_image.jpg"
 
 
     """ %%%%%%%     MÉTODOS DE ACCESO.    %%%%%%%%%%%%%%%%%%%%% """
@@ -219,3 +220,9 @@ class Configurations:
         """
         return cls._alien_sheets_path
 
+    @classmethod
+    def get_game_over_image_path(cls) -> str:
+        """
+        Getter para _background_image_path.
+        """
+        return cls._game_over_image_path
