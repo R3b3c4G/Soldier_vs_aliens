@@ -12,13 +12,19 @@ class Soldier(Sprite):
     Sus métodos son: blit() (dibujar), update_position (para el movimiento), update_animation (para la animación),
                      y getters y setters de las banderas de movimiento.
     """
+    no_id = 0
+
+
 
 
     def __init__(self, screen: pygame.surface.Surface):
+
         """
         Constructor del soldado, en donde se llama al constructor padre de Sprite.
         :param screen: Objeto con la pantalla.
         """
+        self.id = Soldier.no_id
+        Soldier.no_id += 1
         # Se llama al constructor de la clase padre.
         super().__init__()
 
@@ -33,8 +39,13 @@ class Soldier(Sprite):
         self._frames = []
 
         # Se carga la hoja que contiene los frames del soldado.
-        sheet_path = Configurations.get_soldier_sheet_path()
-        soldier_sheet = pygame.image.load(sheet_path)
+
+        self.sheet_path = Configurations.get_soldier_sheet_path()
+        if self.no_id ==2 :
+            self.sheet_path = Configurations.get_soldier_sheet_path2()
+
+
+        soldier_sheet = pygame.image.load(self.sheet_path)
 
         # Se obtienen los datos para "recortar" cada sprite de la hoja de sprites.
         sheet_frames_per_row = Configurations.get_soldier_frames_per_row()
@@ -76,6 +87,8 @@ class Soldier(Sprite):
         screen_rect = screen.get_rect()
         self.rect.right = screen_rect.right
         self.rect.centery = screen_rect.centery
+        if Soldier.no_id ==2 :
+            self.rect.centery = screen_rect.centery - 70
 
         # Se incluyen los atributos para el movimiento.
         self._rect_y = float(self.rect.y)
@@ -166,6 +179,13 @@ class Soldier(Sprite):
         """
         # Se dibuja sobre la pantalla.
         screen.blit(self.image, self.rect)
+
+    @property
+    def new_image_path(self):
+        return self.sheet_path
+    @new_image_path.setter
+    def new_image_path(self, img):
+        self.sheet_path = img
 
 
     """ %%%%%%%     MÉTODOS DE ACCESO.    %%%%%%%%%%%%%%%%%%%%% """

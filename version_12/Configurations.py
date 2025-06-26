@@ -36,6 +36,7 @@ class Configurations:
     # Rutas de las imágenes utilizadas.
     _background_image_path = "../Media/background_image.jpg"
     _soldier_sheet_path = "../Media/soldier-idle_shooting_sheet.png"
+    _soldier_sheet_path2 = "../Media/soldier2.png"
     _shot_sheet_path = "../Media/shot-sheet.png"
     _alien_sheets_path = ["../Media/alien1-Sheet.png", "../Media/alien2-Sheet.png",
                           "../Media/alien3-Sheet.png", "../Media/alien4-Sheet.png",
@@ -43,7 +44,7 @@ class Configurations:
     _game_over_image_path = "../Media/game_over_image.jpg"
 
     #Rutas de sonidos.
-    _music_volume = 0.15
+    _music_volume = 0.45
     _shoot_sound_path = "../Media/shot_laser.mp3"
     _music_fadeout_time=_game_over_screen_time
     _music_path = "../Media/sound_fond.mp3"
@@ -214,6 +215,12 @@ class Configurations:
         Getter para _soldier_sheet_path.
         """
         return cls._soldier_sheet_path
+    @classmethod
+    def get_soldier_sheet_path2(cls) -> str:
+        """
+        Getter para _soldier_sheet_path.
+        """
+        return cls._soldier_sheet_path2
 
     @classmethod
     def get_shot_sheet_path(cls) -> str:

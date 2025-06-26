@@ -44,6 +44,9 @@ def run_game() -> None:
 
     # Se crea el scoreboard
     scoreboard = Scoreboard()
+    scoreboard2 = Scoreboard()
+    scoreboard2.position_y = scoreboard2.position_y + 45
+
 
     # Se reproduce la música y el sonido inicial.
     audio = Audio()
@@ -76,10 +79,10 @@ def run_game() -> None:
         handle_movement(screen, soldier, gunshots, soldier2, gunshots2, aliens)
 
         # Función que revisa las colisiones en el juego.
-        game_over = check_collisions(screen, soldier, gunshots, soldier2, gunshots2, aliens, scoreboard)
+        game_over = check_collisions(screen, soldier, gunshots, soldier2, gunshots2, aliens, scoreboard, scoreboard2)
 
         # Función que administra los elementos de la pantalla.
-        screen_refresh(screen, clock, background, soldier, gunshots, soldier2, gunshots2, aliens, scoreboard)
+        screen_refresh(screen, clock, background, soldier, gunshots, soldier2, gunshots2, aliens, scoreboard, scoreboard2)
 
         # Si el usuario ha perdido la partida, entonces se llama a la función que muestra la pantalla
         # del fin del juego.

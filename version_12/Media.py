@@ -7,6 +7,7 @@ class Background:
     Sus atributos son: image (apariencia) y rect (posición y tamaño).
     Sus métodos son: blit() (dibujar).
     """
+
     def __init__(self):
         # Se carga la imagen del fondo de pantalla.
         image_path = Configurations.get_background_image_path()
@@ -29,15 +30,22 @@ class Background:
 
 
 class Scoreboard:
+    no_id=1
     def __init__(self):
-        self._points= 0
+        self.id = Scoreboard.no_id
+        Scoreboard.no_id += 1
+        self._points = 0
         self._typeface = "kilmono"
         self._font_size = 40
-        self._font_color = (60, 90, 255)
+        self._font_color = (242, 68, 17 )
+        self._text = " J1. Mata a los Aliens MUUUAJAJAJA"
+        if self.id == 2:
+            self._text = "J2. Ganale al J1 no te dejes!!!!!"
+            self._font_color = (255, 227, 89)
 
         #Se agrega la imagen con el score
         self._font = pygame.font.SysFont(self._typeface, self._font_size)
-        self.image = self._font.render("Mata a los Aliens MUUUAJAJAJA", True, self._font_color)
+        self.image = self._font.render(self._text, True, self._font_color)
 
         self.rect = self.image.get_rect()
         #Se ajusta la posicion del marcador
@@ -45,18 +53,44 @@ class Scoreboard:
         self.rect.y = Configurations.get_screen_size()[1]*0.05
 
     def update(self, new_score: int)->None:
-        text = "Aliens Exterminados: " + str(new_score)
+        text = "J1 Aliens Exterminados: " + str(new_score)
+
+        if self.id > 1:
+            text = "J2 Aliens Asesinados: " + str(new_score)
+
         self.image = self._font.render(text, True, self._font_color)
     def blit(self, screen: pygame.surface.Surface ):
         screen.blit(self.image, self.rect)
 
-
+    """Acceso a atributos"""
     @property
     def points (self)->int:
         return self._points
     @points.setter
     def points (self, points):
         self._points = points
+
+    @property
+    def position_x (self):
+        return self.rect.x
+    @position_x.setter
+    def position_x (self, position):
+        self.rect.x = position
+
+    @property
+    def position_y (self):
+        return self.rect.y
+    @position_y.setter
+    def position_y (self, position):
+        self.rect.y = position
+
+    @property
+    def text (self):
+        return self._text
+    @text.setter
+    def text (self, text:str):
+        self._text = text
+
 
 
 class GameOverImage:

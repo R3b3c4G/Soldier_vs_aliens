@@ -43,7 +43,7 @@ class Configurations:
     _game_over_image_path = "../Media/game_over_image.jpg"
 
     #Rutas de sonidos
-    _music_volume = 0.25
+    _music_volume = 0.50
     _shoot_sound_path = "../Media/shot_laser.mp3"
     _music_fadeout_time= _game_over_screen_time
     _music_path = "../Media/sound_fond.mp3"

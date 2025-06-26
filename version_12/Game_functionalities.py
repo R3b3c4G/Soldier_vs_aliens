@@ -105,7 +105,7 @@ def handle_movement(screen: pygame.surface.Surface,
 
 def check_collisions(screen: pygame.surface.Surface,
                     soldier: Soldier, gunshots: pygame.sprite.Group, soldier2: Soldier, gunshots2: pygame.sprite.Group,
-                     aliens: pygame.sprite.Group, scoreboard:Scoreboard ) -> bool:
+                     aliens: pygame.sprite.Group, scoreboard:Scoreboard, scoreboard2:Scoreboard ) -> bool:
     """
     Función que revisa las colisiones en el juego: disparos del soldado - aliens, disparos del soldado - borde
     izquierdo de la pantalla, aliens - borde derecho de la pantalla, aliens - soldado.
@@ -116,6 +116,7 @@ def check_collisions(screen: pygame.surface.Surface,
     :param gunshots2: Grupo que almacena los disparos del segundo soldado.
     :param aliens: Grupo que almacena los aliens.
     :param scoreboard: El marcador.
+    :param scoreboard2: El marcador2.
     :return: La bandera de fin del juego.
     """
     # Se declaran variables que se utilizan en la función.
@@ -145,6 +146,8 @@ def check_collisions(screen: pygame.surface.Surface,
     """CAMBIO. Ahora se considera un segundo soldado."""
     gunshots2_aliens_collisions = pygame.sprite.groupcollide(gunshots2, aliens, True, True)
     if len(gunshots2_aliens_collisions) > 0:
+        scoreboard2.points = scoreboard2.points+1
+        scoreboard2.update(scoreboard2.points)
         print("Alien eliminado por el jugador 2 💥👽")
 
     # Se revisan las colisiones entre los disparos del soldado - borde izquierdo de la pantalla.
@@ -177,7 +180,8 @@ def screen_refresh(screen: pygame.surface.Surface,
                     soldier2: Soldier,
                     gunshots2: pygame.sprite.Group,
                    aliens: pygame.sprite.Group,
-                   scoreboard:Scoreboard) -> None:
+                   scoreboard:Scoreboard,
+                   scoreboard2:Scoreboard) -> None:
     """
     Función que administra los elementos de la pantalla.
     :param screen: Objeto con la pantalla.
@@ -198,6 +202,9 @@ def screen_refresh(screen: pygame.surface.Surface,
     soldier.blit(screen)
     #Se dibuja scoreboard
     scoreboard.blit(screen)
+    scoreboard2.text = "J2 Mata mas que el J1 !!!!!!!"
+    scoreboard2.blit(screen)
+
 
     # Se animan y se dibujan los disparos del soldado.
     for shot in gunshots.sprites():
