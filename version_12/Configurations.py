@@ -6,6 +6,7 @@ class Configurations:
     _game_title = "Soldados vs aliens"              # Título de la ventana.
     _screen_size = (1280, 720)                      # Resolución de la pantalla (ancho, alto).
     _fps = 30                                       # Número máximo de FPS del videojuego.
+    """NUEVO."""
     _game_over_screen_time = 4                      # Tiempo que se detiene el juego al perder.
 
     # Configuraciones del soldado.
@@ -21,6 +22,7 @@ class Configurations:
     _shot_frames_per_row = 4                        # Número de frames que contiene cada fila de la hoja de frames.
     _shot_frame_delay = 100                         # Tiempo de cada frame del disparo (en ms).
     _shot_speed = 32.5                              # Velocidad (en píxeles) del disparo.
+    """NUEVO."""
     _max_gunshots = 2                               # Número máximo de disparos.
 
     # Configuraciones de los aliens.
@@ -35,11 +37,19 @@ class Configurations:
     _background_image_path = "../Media/background_image.jpg"
     _soldier_sheet_path = "../Media/soldier-idle_shooting_sheet.png"
     _shot_sheet_path = "../Media/shot-sheet.png"
-    _alien_sheets_path = ["../Media/alien2-Sheet.png",
-                          "../Media/alien4-Sheet.png",
+    _alien_sheets_path = ["../Media/alien1-Sheet.png", "../Media/alien2-Sheet.png",
+                          "../Media/alien3-Sheet.png", "../Media/alien4-Sheet.png",
                           "../Media/alien5-Sheet.png"]
-    """NUEVO."""
     _game_over_image_path = "../Media/game_over_image.jpg"
+
+    #Rutas de sonidos.
+    _music_volume = 0.15
+    _shoot_sound_path = "../Media/shot_laser.mp3"
+    _music_fadeout_time=_game_over_screen_time
+    _music_path = "../Media/sound_fond.mp3"
+    _start_sounds_path = "../Media/iniciosound.mp3"
+    _game_over_sound_path = "../Media/intro_sound.mp3"
+
 
 
     """ %%%%%%%     MÉTODOS DE ACCESO.    %%%%%%%%%%%%%%%%%%%%% """
@@ -219,10 +229,50 @@ class Configurations:
         """
         return cls._alien_sheets_path
 
-    """NUEVO."""
     @classmethod
     def get_game_over_image_path(cls) -> str:
         """
         Getter para _background_image_path.
         """
         return cls._game_over_image_path
+
+    @classmethod
+    def get_music_path(cls) -> str:
+        """
+        Getter para _background_image_path.
+        """
+        return cls._music_path
+
+    @classmethod
+    def get_start_sounds_path(cls) -> str:
+        """
+        Getter para _background_image_path.
+        """
+        return cls._start_sounds_path
+
+    @classmethod
+    def get_game_over_sound_path(cls) -> str:
+        """
+        Getter para _background_image_path.
+        """
+        return cls._game_over_sound_path
+
+    @classmethod
+    def get_shoot_sound_path(cls) -> str:
+        """
+        Getter para _background_image_path.
+        """
+        return cls._shoot_sound_path
+
+    @classmethod
+    def get_music_volume (cls) -> float:
+        """
+        Getter para _background_image_path.
+        """
+        return cls._music_volume
+    @classmethod
+    def get_music_fadeout_time (cls):
+        return cls._music_fadeout_time
+
+
+

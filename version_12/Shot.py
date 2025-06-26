@@ -1,4 +1,5 @@
 import pygame
+from Media import Audio
 from pygame.sprite import Sprite
 from Configurations import Configurations
 from Soldier import Soldier
