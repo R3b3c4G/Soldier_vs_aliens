@@ -26,7 +26,7 @@ Como proyecto final del 4.º semestre demostramos todo lo aprendido en programac
 </p>
 
 
-## 👷👷 Dsarrolladores
+## 👷👷 Desarrolladores
 
 El equipo duo binario, integrado por:
 Hector Jesus Mendez Santiago y Rebeca Gregorio Espina
