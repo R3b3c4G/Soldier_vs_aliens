@@ -1,8 +1,9 @@
 import pygame
 from Configurations import Configurations
-from Media import Background
+from Media import Background, GameOverImage
 from Soldier import Soldier
 from Shot import Shot
+
 """NUEVO."""
 from Alien import Alien
 import time
@@ -165,9 +166,11 @@ def screen_refresh(screen: pygame.surface.Surface,
 
 
 """NUEVO."""
-def game_over_screen() -> None:
+def game_over_screen(screen:pygame.surface.Surface) -> None:
     """
     Función con la pantalla del fin del juego.
     """
-    # Se agrega una pausa para que el usuario se dé cuenta de que ha perdido.
+    game_over_image = GameOverImage()
+    game_over_image.blit(screen)
+    pygame.display.flip()
     time.sleep(Configurations.get_game_over_screen_time())

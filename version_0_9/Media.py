@@ -26,3 +26,20 @@ class Background:
         :param screen: Pantalla en donde se dibuja el fondo de pantalla.
         """
         screen.blit(self.image, self.rect)
+
+
+class GameOverImage:
+    def __init__(self):
+        game_over_image_path = Configurations.get_game_over_image_path()
+        self.image = pygame.image.load(game_over_image_path)
+
+        # Se escala la imagen al tamaño de la pantalla.
+        screen_size = Configurations.get_screen_size()
+        self.image = pygame.transform.scale(self.image, screen_size)
+
+        self.rect = self.image.get_rect()
+
+    def blit(self, screen: pygame.surface.Surface) -> None:
+
+        # Dibujar la imagen en pantalla
+        screen.blit(self.image, self.rect)

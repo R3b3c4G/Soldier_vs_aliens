@@ -2,7 +2,7 @@
 import pygame
 from Configurations import Configurations
 from Game_functionalities import game_events, handle_movement, check_collisions, screen_refresh, game_over_screen     # CAMBIO.
-from Media import Background
+from Media import Background, GameOverImage # NUEVO
 from Soldier import Soldier
 from pygame.sprite import Group
 from Alien import Alien
@@ -43,6 +43,9 @@ def run_game() -> None:
         alien = Alien()
         aliens.add(alien)
 
+    # Se cra el objeto de la clase GameOverImage
+    game_over_image = GameOverImage()   # Nuevo
+
     # Ciclo principal del videojuego.
     game_over = False
     while not game_over:
@@ -69,7 +72,7 @@ def run_game() -> None:
         # Si el usuario ha perdido la partida, entonces se llama a la función que muestra la pantalla
         # del fin del juego.
         if game_over:
-            game_over_screen()
+            game_over_screen(screen)
 
     # Cierra todos los recursos del módulo pygame.
     pygame.quit()
