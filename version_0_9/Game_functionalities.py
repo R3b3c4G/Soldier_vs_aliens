@@ -1,10 +1,9 @@
 import pygame
 from Configurations import Configurations
+"""NUEVO."""
 from Media import Background, GameOverImage
 from Soldier import Soldier
 from Shot import Shot
-
-"""NUEVO."""
 from Alien import Alien
 import time
 from random import randint
@@ -165,11 +164,12 @@ def screen_refresh(screen: pygame.surface.Surface,
     clock.tick(Configurations.get_fps())
 
 
-"""NUEVO."""
+
 def game_over_screen(screen:pygame.surface.Surface) -> None:
     """
     Función con la pantalla del fin del juego.
     """
+    """NUEVO."""
     game_over_image = GameOverImage()
     game_over_image.blit(screen)
     pygame.display.flip()

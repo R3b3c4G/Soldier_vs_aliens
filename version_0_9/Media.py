@@ -28,6 +28,7 @@ class Background:
         screen.blit(self.image, self.rect)
 
 
+"""NUEVO."""
 class GameOverImage:
     def __init__(self):
         game_over_image_path = Configurations.get_game_over_image_path()

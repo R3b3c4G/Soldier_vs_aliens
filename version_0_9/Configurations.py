@@ -6,7 +6,6 @@ class Configurations:
     _game_title = "Soldados vs aliens"              # Título de la ventana.
     _screen_size = (1280, 720)                      # Resolución de la pantalla (ancho, alto).
     _fps = 30                                       # Número máximo de FPS del videojuego.
-    """NUEVO."""
     _game_over_screen_time = 4                      # Tiempo que se detiene el juego al perder.
 
     # Configuraciones del soldado.
@@ -22,7 +21,6 @@ class Configurations:
     _shot_frames_per_row = 4                        # Número de frames que contiene cada fila de la hoja de frames.
     _shot_frame_delay = 100                         # Tiempo de cada frame del disparo (en ms).
     _shot_speed = 32.5                              # Velocidad (en píxeles) del disparo.
-    """NUEVO."""
     _max_gunshots = 2                               # Número máximo de disparos.
 
     # Configuraciones de los aliens.
@@ -40,6 +38,7 @@ class Configurations:
     _alien_sheets_path = ["../Media/alien2-Sheet.png",
                           "../Media/alien4-Sheet.png",
                           "../Media/alien5-Sheet.png"]
+    """NUEVO."""
     _game_over_image_path = "../Media/game_over_image.jpg"
 
 
@@ -220,6 +219,7 @@ class Configurations:
         """
         return cls._alien_sheets_path
 
+    """NUEVO."""
     @classmethod
     def get_game_over_image_path(cls) -> str:
         """
