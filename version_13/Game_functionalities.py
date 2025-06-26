@@ -31,13 +31,11 @@ def game_events(soldier: Soldier, gunshots: pygame.sprite.Group, soldier2: Soldi
             # Se verifica las flechas para el movimiento.
             if event.key == pygame.K_UP:
                 soldier.is_moving_up = True
-
             if event.key == pygame.K_DOWN:
                 soldier.is_moving_down = True
-
             """CAMBIO. Ahora también se incluye la verificación de la cantidad de disparos."""
             # Si se presionó el espacio y la cantidad de disparos es menor al máximo posible, entonces se
-            # crea un nuevo disparo y se agrega al grupo. Además, indica que el soldado está dis  parando.
+            # crea un nuevo disparo y se agrega al grupo. Además, indica que el soldado está disparando.
             if event.key == pygame.K_SPACE and len(gunshots) < Configurations.get_max_gunshots():
                 new_shot = Shot(soldier)
                 gunshots.add(new_shot)
