@@ -119,6 +119,8 @@ class Audio:
         self._start_sound = pygame.mixer.Sound(Configurations.get_start_sounds_path())
         self._shoot_sound_path = pygame.mixer.Sound(Configurations.get_shoot_sound_path())
         self._game_over_sound = pygame.mixer.Sound(Configurations.get_game_over_sound_path())
+        self._impact_sound = pygame.mixer.Sound(Configurations.get_sound_impact())
+        self._impact_sound2 = pygame.mixer.Sound(Configurations.get_sound_impact2())
 
     @classmethod
     def play_music(cls, volume)->None:
@@ -151,6 +153,19 @@ class Audio:
         :return:
         """
         self._shoot_sound_path.play()
+    def play_impact_sound(self)->None:
+        """
+        Reproduce sonidos cuando la serpiente come una manzana
+        :return:
+        """
+        self._impact_sound.play()
+
+    def play_impact_sound2 ( self)->None:
+        """
+        Reproduce sonidos cuando la serpiente come una manzana
+        :return:
+        """
+        self._impact_sound2.play()
     def play_game_over(self)->None:
         """Reproduce el sonido cuando pierde el jugador"""
         self._game_over_sound.play()
