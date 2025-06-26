@@ -31,13 +31,13 @@ class Background:
 class Scoreboard:
     def __init__(self):
         self._points= 0
-        self._typeface = "Kimono"
+        self._typeface = "kilmono"
         self._font_size = 40
-        self._font_color = (171, 250, 10)
+        self._font_color = (60, 90, 255)
 
         #Se agrega la imagen con el score
         self._font = pygame.font.SysFont(self._typeface, self._font_size)
-        self.image = self._font.render("pontos : 0", True, self._font_color)
+        self.image = self._font.render("Mata a los Aliens MUUUAJAJAJA", True, self._font_color)
 
         self.rect = self.image.get_rect()
         #Se ajusta la posicion del marcador
@@ -45,7 +45,7 @@ class Scoreboard:
         self.rect.y = Configurations.get_screen_size()[1]*0.05
 
     def update(self, new_score: int)->None:
-        text = "Puntos: " + str(new_score)
+        text = "Aliens Exterminados: " + str(new_score)
         self.image = self._font.render(text, True, self._font_color)
     def blit(self, screen: pygame.surface.Surface ):
         screen.blit(self.image, self.rect)
@@ -57,3 +57,20 @@ class Scoreboard:
     @points.setter
     def points (self, points):
         self._points = points
+
+
+class GameOverImage:
+    def __init__(self):
+        game_over_image_path = Configurations.get_game_over_image_path()
+        self.image = pygame.image.load(game_over_image_path)
+
+        # Se escala la imagen al tamaño de la pantalla.
+        screen_size = Configurations.get_screen_size()
+        self.image = pygame.transform.scale(self.image, screen_size)
+
+        self.rect = self.image.get_rect()
+
+    def blit(self, screen: pygame.surface.Surface) -> None:
+
+        # Dibujar la imagen en pantalla
+        screen.blit(self.image, self.rect)

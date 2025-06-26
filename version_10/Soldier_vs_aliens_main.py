@@ -2,7 +2,7 @@
 import pygame
 from Configurations import Configurations
 from Game_functionalities import game_events, handle_movement, check_collisions, screen_refresh, game_over_screen     # CAMBIO.
-from Media import Background, Scoreboard
+from Media import Background, Scoreboard, GameOverImage
 from Soldier import Soldier
 from pygame.sprite import Group
 from Alien import Alien
@@ -38,6 +38,7 @@ def run_game() -> None:
     # Se crea el scoreboard
     scoreboard = Scoreboard()
 
+
     # Se crea la flota inicial de enemigos.
     min_aliens = Configurations.get_min_aliens()
     aliens_to_spawn = min_aliens + randint(0, min_aliens)
@@ -72,7 +73,7 @@ def run_game() -> None:
         # Si el usuario ha perdido la partida, entonces se llama a la función que muestra la pantalla
         # del fin del juego.
         if game_over:
-            game_over_screen()
+            game_over_screen(screen)
 
     # Cierra todos los recursos del módulo pygame.
     pygame.quit()

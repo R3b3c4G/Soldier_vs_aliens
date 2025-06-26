@@ -40,6 +40,8 @@ class Configurations:
     _alien_sheets_path = ["../Media/alien1-Sheet.png", "../Media/alien2-Sheet.png",
                           "../Media/alien3-Sheet.png", "../Media/alien4-Sheet.png",
                           "../Media/alien5-Sheet.png"]
+    _game_over_image_path = "../Media/game_over_image.jpg"
+
 
 
     """ %%%%%%%     MÉTODOS DE ACCESO.    %%%%%%%%%%%%%%%%%%%%% """
@@ -218,6 +220,13 @@ class Configurations:
         Getter para _alien_sheets_path.
         """
         return cls._alien_sheets_path
+
+    @classmethod
+    def get_game_over_image_path(cls) -> str:
+        """
+        Getter para _background_image_path.
+        """
+        return cls._game_over_image_path
 
 
 
