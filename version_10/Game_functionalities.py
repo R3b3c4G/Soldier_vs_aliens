@@ -3,7 +3,6 @@ from Configurations import Configurations
 from Media import Background, GameOverImage
 from Soldier import Soldier
 from Shot import Shot
-"""NUEVO."""
 from Alien import Alien
 import time
 from random import randint
