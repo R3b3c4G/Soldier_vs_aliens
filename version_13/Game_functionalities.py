@@ -105,7 +105,7 @@ def handle_movement(screen: pygame.surface.Surface,
 
 def check_collisions(screen: pygame.surface.Surface,
                     soldier: Soldier, gunshots: pygame.sprite.Group, soldier2: Soldier, gunshots2: pygame.sprite.Group,
-                     aliens: pygame.sprite.Group, scoreboard:Scoreboard, scoreboard2:Scoreboard ) -> bool:
+                     aliens: pygame.sprite.Group, scoreboard:Scoreboard, scoreboard2:Scoreboard, audio:Audio ) -> bool:
     """
     Función que revisa las colisiones en el juego: disparos del soldado - aliens, disparos del soldado - borde
     izquierdo de la pantalla, aliens - borde derecho de la pantalla, aliens - soldado.
@@ -139,6 +139,7 @@ def check_collisions(screen: pygame.surface.Surface,
     # Se obtienen las colisiones entre los disparos del soldado - aliens.
     gunshots_aliens_collisions = pygame.sprite.groupcollide(gunshots, aliens, True, True)
     if len(gunshots_aliens_collisions) > 0:
+        audio.play_impact_sound()
         scoreboard.points = scoreboard.points+1
         scoreboard.update(scoreboard.points)
         print("Alien eliminado 💣👽!!!")
@@ -146,6 +147,7 @@ def check_collisions(screen: pygame.surface.Surface,
     """CAMBIO. Ahora se considera un segundo soldado."""
     gunshots2_aliens_collisions = pygame.sprite.groupcollide(gunshots2, aliens, True, True)
     if len(gunshots2_aliens_collisions) > 0:
+        audio.play_impact_sound2()
         scoreboard2.points = scoreboard2.points+1
         scoreboard2.update(scoreboard2.points)
         print("Alien eliminado por el jugador 2 💥👽")

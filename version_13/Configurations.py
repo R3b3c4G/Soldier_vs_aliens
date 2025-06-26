@@ -50,6 +50,8 @@ class Configurations:
     _music_path = "../Media/sound_fond.mp3"
     _start_sounds_path = "../Media/iniciosound.mp3"
     _game_over_sound_path = "../Media/intro_sound.mp3"
+    _sound_impact = "../Media/impacto1.mp3"
+    _sound_impact2 = "../Media/impacto2.mp3"
 
 
 
@@ -280,6 +282,15 @@ class Configurations:
     @classmethod
     def get_music_fadeout_time (cls):
         return cls._music_fadeout_time
+
+    @classmethod
+    def get_sound_impact (cls):
+        return cls._sound_impact
+    @classmethod
+    def get_sound_impact2 (cls):
+        return cls._sound_impact2
+
+
 
 
 
