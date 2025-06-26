@@ -1,6 +1,6 @@
 import pygame
 from Configurations import Configurations
-from Media import Background, GameOverImage
+from Media import Background, GameOverImage,Scoreboard, Audio
 from Soldier import Soldier
 from Shot import Shot
 
@@ -8,10 +8,9 @@ from Shot import Shot
 from Alien import Alien
 import time
 from random import randint
-from Media import Scoreboard, Audio
 
 
-def game_events(soldier: Soldier, gunshots: pygame.sprite.Group) -> bool:
+def game_events(soldier: Soldier, gunshots: pygame.sprite.Group, audio:Audio) -> bool:
     """
     Función que administra los eventos del juego.
     :param soldier: Objeto con el soldado (personaje principal).
@@ -44,6 +43,7 @@ def game_events(soldier: Soldier, gunshots: pygame.sprite.Group) -> bool:
                 new_shot = Shot(soldier)
                 gunshots.add(new_shot)
                 soldier.shoots()
+                audio.play_shoot_sound()
 
         # Se verifica el evento de soltar una tecla.
         if event.type == pygame.KEYUP:

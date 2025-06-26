@@ -59,7 +59,7 @@ def run_game() -> None:
     game_over = False
     while not game_over:
         # Función que administra los eventos del juego.
-        game_over = game_events(soldier, gunshots)
+        game_over = game_events(soldier, gunshots, audio)
 
         """NUEVO."""
         # Si el usuario ha cerrado la ventana, entonces se termina el ciclo para cerrar los recursos de pygame.

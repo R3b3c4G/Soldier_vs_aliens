@@ -44,11 +44,12 @@ class Configurations:
 
     #Rutas de sonidos
     _music_volume = 0.15
+    _shoot_sound_path = "../Media/shot_laser.mp3"
     _music_fadeout_time=_game_over_screen_time
     _music_path = "../Media/sound_fond.mp3"
     _start_sounds_path = "../Media/iniciosound.mp3"
     _game_over_sound_path = "../Media/intro_sound.mp3"
-    _shoot_sound_path = "../Media/shot_laser.mp3"
+
 
 
     """ %%%%%%%     MÉTODOS DE ACCESO.    %%%%%%%%%%%%%%%%%%%%% """
