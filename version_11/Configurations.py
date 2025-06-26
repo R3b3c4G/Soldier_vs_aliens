@@ -45,6 +45,7 @@ class Configurations:
     #Rutas de sonidos
     _music_volume = 0.50
     _shoot_sound_path = "../Media/shot_laser.mp3"
+    _sound_impact = "../Media/sound_impact.mp3"
     _music_fadeout_time= _game_over_screen_time
     _music_path = "../Media/sound_fond.mp3"
     _start_sounds_path = "../Media/iniciosound.mp3"
@@ -273,6 +274,11 @@ class Configurations:
     @classmethod
     def get_music_fadeout_time (cls):
         return cls._music_fadeout_time
+    @classmethod
+    def get_sound_impact (cls):
+        return cls._sound_impact
+
+
 
 
 

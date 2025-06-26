@@ -79,7 +79,7 @@ def run_game() -> None:
         handle_movement(screen, soldier, gunshots, soldier2, gunshots2, aliens)
 
         # Función que revisa las colisiones en el juego.
-        game_over = check_collisions(screen, soldier, gunshots, soldier2, gunshots2, aliens, scoreboard, scoreboard2)
+        game_over = check_collisions(screen, soldier, gunshots, soldier2, gunshots2, aliens, scoreboard, scoreboard2, audio)
 
         # Función que administra los elementos de la pantalla.
         screen_refresh(screen, clock, background, soldier, gunshots, soldier2, gunshots2, aliens, scoreboard, scoreboard2)

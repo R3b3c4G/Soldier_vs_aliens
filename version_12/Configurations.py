@@ -20,7 +20,7 @@ class Configurations:
     # Configuraciones de los disparos.
     _shot_size = (32, 32)                           # Escala del disparo (ancho, alto).
     _shot_frames_per_row = 4                        # Número de frames que contiene cada fila de la hoja de frames.
-    _shot_frame_delay = 100                         # Tiempo de cada frame del disparo (en ms).
+    _shot_frame_delay = 50                         # Tiempo de cada frame del disparo (en ms).
     _shot_speed = 32.5                              # Velocidad (en píxeles) del disparo.
     """NUEVO."""
     _max_gunshots = 2                               # Número máximo de disparos.
@@ -46,6 +46,8 @@ class Configurations:
     #Rutas de sonidos.
     _music_volume = 0.45
     _shoot_sound_path = "../Media/shot_laser.mp3"
+    _sound_impact = "../Media/impacto1.mp3"
+    _sound_impact2 = "../Media/impacto2.mp3"
     _music_fadeout_time=_game_over_screen_time
     _music_path = "../Media/sound_fond.mp3"
     _start_sounds_path = "../Media/iniciosound.mp3"
@@ -280,6 +282,13 @@ class Configurations:
     @classmethod
     def get_music_fadeout_time (cls):
         return cls._music_fadeout_time
+
+    @classmethod
+    def get_sound_impact (cls):
+        return cls._sound_impact
+    @classmethod
+    def get_sound_impact2 (cls):
+        return cls._sound_impact2
 
 
 
