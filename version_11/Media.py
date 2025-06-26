@@ -105,18 +105,23 @@ class Audio:
         :return:
         """
         pygame.mixer.music.fadeout(time)
+
     def play_start_sound(self)->None:
         """
         Se utiliza para reproduci el sonido cuando epieza el juego
         :return:
         """
         self._start_sound.play()
+
+
     def play_shoot_sound(self)->None:
         """
-        Reproduce sonidos cuando la serpiente come una manzana
+        Reproduce sonidos cuando dispara
         :return:
         """
         self._shoot_sound_path.play()
+
+
     def play_game_over(self)->None:
         """Reproduce el sonido cuando pierde el jugador"""
         self._game_over_sound.play()

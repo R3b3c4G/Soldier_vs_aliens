@@ -1,6 +1,6 @@
 import pygame
 from Configurations import Configurations
-from Media import Background, GameOverImage,Scoreboard, Audio
+from Media import Background, GameOverImage, Scoreboard, Audio
 from Soldier import Soldier
 from Shot import Shot
 
@@ -10,11 +10,12 @@ import time
 from random import randint
 
 
-def game_events(soldier: Soldier, gunshots: pygame.sprite.Group, audio:Audio) -> bool:
+def game_events(soldier: Soldier, gunshots: pygame.sprite.Group, audio:Audio ) -> bool:
     """
     Función que administra los eventos del juego.
     :param soldier: Objeto con el soldado (personaje principal).
     :param gunshots: Grupo que almacena los disparos del soldado.
+    :param audio
     :return: La bandera de fin del juego.
     """
     # Se declara la bandera de fin del juego que se retorna.
@@ -39,11 +40,10 @@ def game_events(soldier: Soldier, gunshots: pygame.sprite.Group, audio:Audio) ->
             # Si se presionó el espacio y la cantidad de disparos es menor al máximo posible, entonces se
             # crea un nuevo disparo y se agrega al grupo. Además, indica que el soldado está dis  parando.
             if event.key == pygame.K_SPACE and len(gunshots) < Configurations.get_max_gunshots():
-
+                audio.play_shoot_sound()
                 new_shot = Shot(soldier)
                 gunshots.add(new_shot)
                 soldier.shoots()
-                audio.play_shoot_sound()
 
         # Se verifica el evento de soltar una tecla.
         if event.type == pygame.KEYUP:
