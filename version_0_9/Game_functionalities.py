@@ -173,4 +173,5 @@ def game_over_screen(screen:pygame.surface.Surface) -> None:
     game_over_image = GameOverImage()
     game_over_image.blit(screen)
     pygame.display.flip()
+
     time.sleep(Configurations.get_game_over_screen_time())
